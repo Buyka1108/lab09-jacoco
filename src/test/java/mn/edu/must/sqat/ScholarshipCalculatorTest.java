@@ -129,4 +129,16 @@ class ScholarshipCalculatorTest {
         assertEquals(0,
                 calculator.scholarship(2.9, 16, false));
     }
+    @Test
+    void averageOneGrade() {
+        assertEquals(4.0,
+                calculator.gpa(new double[]{95}), 0.000001);
+    }
+
+    @Test
+    void averageSeveralGrades() {
+        assertEquals(2.5,
+                calculator.gpa(new double[]{95, 85, 75, 65}),
+                0.000001);
+    }
 }

@@ -141,4 +141,38 @@ class ScholarshipCalculatorTest {
                 calculator.gpa(new double[]{95, 85, 75, 65}),
                 0.000001);
     }
+    @Test
+    void score60IsD() {
+        assertEquals("D", calculator.letterGrade(60));
+    }
+
+    @Test
+    void score59Point99IsF() {
+        assertEquals("F", calculator.letterGrade(59.99));
+    }
+
+    @Test
+    void score69Point99IsD() {
+        assertEquals("D", calculator.letterGrade(69.99));
+    }
+
+    @Test
+    void score0IsF() {
+        assertEquals("F", calculator.letterGrade(0));
+    }
+
+    @Test
+    void score100IsA() {
+        assertEquals("A", calculator.letterGrade(100));
+    }
+
+    @Test
+    void score89Point99IsB() {
+        assertEquals("B", calculator.letterGrade(89.99));
+    }
+
+    @Test
+    void score90IsA() {
+        assertEquals("A", calculator.letterGrade(90));
+    }
 }
